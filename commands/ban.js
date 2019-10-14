@@ -23,14 +23,31 @@ module.exports.run = async (bot, message, args) => {
                 }
             }});
 	if (!member.kickable)
-		return message.reply("I cannot ban this user! Do they have a higher role? **Do I have ban permissions**?");
+		return message.channel.send({embed: {
+                color: 15406156,
+		title: "Error <:RedX:633431980670976014>",
+                description: "This user is not bannable by me. Please ensure that I have sufficent permissions and my role is above the targeted user.",
+                author: {
+                    name: message.author.tag,
+                    icon_url: message.author.displayAvatarURL
+                }
+            }});
 
 	let reason = args.slice(1).join(" ");
 	if (!reason) reason = "No reason provided";
 
 	await member.ban(reason)
 		.catch((error) => message.reply(`\nSorry ${message.author}, I couldn't ban because of: ${error}`));
-		message.reply(`<:check:633432011054383167> I have sucessfully banned ${member.user.tag}, ${message.author.tag}! Reason is: ${reason}`);
+		message.channel.send({embed: {
+                color: 15406156,
+		title: "Sucess <:check:633432011054383167>",
+                description: "I have sucessfully banned ${member.user.tag} for **${reason}!**",
+                author: {
+                    name: message.author.tag,
+                    icon_url: message.author.displayAvatarURL
+                }
+            }});
+
 	//await bot.guilds.get("613883505675599872").channels.get("614111309558186004").send(`**${member.user.tag}** has been banned by ${message.author.tag} because of: **${reason}**!`);
 };
 
