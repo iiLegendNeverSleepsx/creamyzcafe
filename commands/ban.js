@@ -3,7 +3,8 @@ module.exports.run = async (bot, message, args) => {
 	if (!message.member.hasPermission("BAN_MEMBERS") || !message.member.hasPermission("ADMINISTRATOR"))
 		return message.channel.send({embed: {
                 color: 15406156,
-                description: "You must have the `BAN_MEMEBERS` permission to run this command!",
+		title: "Error",
+                description: "<:RedX:633431980670976014> You must have the `BAN_MEMEBERS` permission to run this command!",
                 author: {
                     name: message.author.tag,
                     icon_url: message.author.displayAvatarURL
@@ -14,7 +15,8 @@ module.exports.run = async (bot, message, args) => {
 	if (!member)
 		return message.channel.send({embed: {
                 color: 15406156,
-                description: ":x: You to provide a valid user of this guild!",
+		title: "Error",
+                description: "<:RedX:633431980670976014> You to provide a valid user of this guild!",
                 author: {
                     name: message.author.tag,
                     icon_url: message.author.displayAvatarURL
