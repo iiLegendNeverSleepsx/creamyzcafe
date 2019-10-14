@@ -26,10 +26,10 @@ module.exports.run = async (bot, message, args) => {
 }
 
 module.exports.help = {
-	name: "donate",
-	usage: "donate",
+	name: "premium",
+	usage: "premium",
 	description: "nil",
-	longdes: "Donate to Trivago Hotels!",
+	longdes: "Purchase Trivago Hotel's discord premium!",
 	mentionedperm: "None",
-  category: "Utility"
+  	category: "Utility"
 }
