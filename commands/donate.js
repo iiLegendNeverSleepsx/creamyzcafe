@@ -27,7 +27,7 @@ module.exports.run = async (bot, message, args) => {
     timestamp: new Date(),
     footer: {
       icon_url: client.user.avatarURL,
-      text: "Trivago Hotels © 2019 - Owned by Sally and Sam"
+      text: "Trivago Hotels © 2020 - Owned by Sally and Sam"
     }
   }
 });
